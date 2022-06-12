@@ -3,13 +3,9 @@ import React, { PureComponent } from 'react';
 import styles from './Search.module.scss';
 
 export class Search extends PureComponent {
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			text: '',
-		};
-	}
+  state = {
+    text: '',
+  }
 
 	handleChangeText = ({ target: { value } }) => {
 		const { onChangeSearch } = this.props;
