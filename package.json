@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "start:dev": "cross-env NODE_ENV=development webpack serve --open",
-    "start:prod": "cross-env NODE_ENV=production webpack serve --open",
     "build:dev": "cross-env NODE_ENV=development webpack",
     "build:prod": "cross-env NODE_ENV=production webpack",
     "lint:js": "./node_modules/.bin/eslint '**/*.js'",

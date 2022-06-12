@@ -16,16 +16,6 @@ module.exports = {
     extensions: ['.js', '.jsx', '.json'],
     modules: [path.resolve(__dirname, './src'), 'node_modules'],
   },
-  watch: true,
-  devServer: {
-    static: {
-      directory: path.join(__dirname, 'dist'),
-    },
-    compress: true,
-    port: 3030,
-    open: true,
-    hot: true,
-  },
   optimization: {
     splitChunks: {
       chunks: 'all',
