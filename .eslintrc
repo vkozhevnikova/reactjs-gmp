@@ -1,0 +1,106 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "airbnb",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "prettier"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "prettier",
+    "react"
+  ],
+  "rules": {
+    "max-len": [
+      "error",
+      {
+        "code": 120,
+        "ignoreStrings": true,
+        "ignoreComments": true,
+        "ignoreTemplateLiterals": true,
+        "ignorePattern": "^\\s*const \\S+ = /.*/;"
+      }
+    ],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+    "jsx-quotes": ["error", "prefer-double"],
+    "space-in-parens": ["error", "never"],
+    "react/jsx-filename-extension": 0,
+    "react/jsx-indent": ["error", 2],
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "function-declaration",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "react/jsx-curly-spacing": [
+      2,
+      {
+        "when": "never",
+        "children": true,
+        "spacing": {
+          "objectLiterals": "never",
+          "allowMultiline": true
+        }
+      }
+    ],
+    "react/jsx-tag-spacing": [
+      2,
+      {
+        "closingSlash": "never",
+        "beforeSelfClosing": "always",
+        "afterOpening": "never",
+        "beforeClosing": "allow"
+      }
+    ],
+    "react/jsx-uses-react": 0,
+    "react/react-in-jsx-scope": 0,
+    "react/jsx-props-no-spreading": 0,
+    "import/prefer-default-export": 0,
+    "arrow-parens": ["error", "as-needed"],
+    "array-bracket-spacing": ["error", "never"],
+    "object-curly-spacing": ["error", "always"],
+    "template-curly-spacing": ["error", "never"],
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "functions": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline"
+      }
+    ],
+    "no-underscore-dangle": ["error", { "allow": ["_id"] }],
+    "no-trailing-spaces": "error",
+    "eol-last": ["error", "always"],
+    "space-unary-ops": [
+      1,
+      {
+        "words": true,
+        "nonwords": true,
+        "overrides": {
+          "++": false,
+          "--": false,
+          "-": false,
+          "!": false
+        }
+      }
+    ],
+    "space-infix-ops": ["error", { "int32Hint": false }],
+    "keyword-spacing": ["error", { "before": true }],
+    "prettier/prettier": ["error"]
+  }
+}
