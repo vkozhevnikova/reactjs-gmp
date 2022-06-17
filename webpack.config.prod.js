@@ -44,6 +44,14 @@ module.exports = {
           { loader: MiniCssExtractPlugin.loader },
           'css-loader',
           'sass-loader',
+          {
+            loader: 'style-resources-loader',
+            options: {
+              patterns: [
+                './src/assets/styles/main.scss',
+              ]
+            }
+          },
           'postcss-loader'
         ],
       },
