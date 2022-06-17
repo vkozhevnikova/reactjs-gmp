@@ -1,0 +1,48 @@
+{
+  "compilerOptions": {
+    "typeRoots": [
+      "node_modules/@types",
+    ],
+    "target": "es6",
+    "lib": [
+      "es5",
+      "es6",
+      "dom",
+      "es2015.collection",
+      "es2017"
+    ],
+    "declaration": true,
+    "sourceMap": true,
+    "declarationMap": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "inlineSources": true,
+    "forceConsistentCasingInFileNames": true,
+    "noUnusedLocals": false,
+    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true,
+    "importsNotUsedAsValues": "preserve",
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "jsx": "react",
+    "incremental": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+  },
+  "types": [
+    "es6-promise",
+    "webpack-env"
+  ],
+  "include": [
+    "src/**/*",
+    "custom.d.ts",
+    "declarations.d.ts",
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+  ],
+}
