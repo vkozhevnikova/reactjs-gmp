@@ -1,0 +1,37 @@
+@use 'sass:math';
+
+@function hextorgb($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
+
+@function em($pixels, $context: 16) {
+  @return #{$pixels / $context}em;
+}
+
+@function rem($size, $context: 16) {
+  @return math.div($size, $context) * 1rem;
+}
+
+// Convert px to em
+@function pxtoem($target, $context) {
+  @return ($target / $context) + 0;
+}
+
+// Convert em to px
+@function emtopx($target, $context) {
+  @return ($target * $context) + 0;
+}
+
+// Convert px to vw
+@function vw($target, $context) {
+  $vw-context: ($context * 0.01) * 1px;
+
+  @return ($target / $vw-context) * 1vw;
+}
+
+// Convert px to vh
+@function vh($target, $context) {
+  $vh-context: ($context * 0.01) * 1px;
+
+  @return ($target / $vh-context) * 1vh;
+}

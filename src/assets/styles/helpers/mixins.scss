@@ -1,0 +1,50 @@
+@mixin text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin placeholder($color) {
+  &::input-placeholder {
+    color: $color;
+  }
+
+  &:placeholder {
+    color: $color;
+  }
+
+  &:input-placeholder {
+    color: $color;
+  }
+}
+
+@mixin resetul {
+  list-style-type: none;
+  font-weight: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin resetli {
+  padding-left: 0;
+
+  &::marker {
+    content: normal;
+  }
+}
+
+@mixin resetbtn {
+  margin: 0;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+  background: transparent;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@mixin reseta {
+  text-decoration: none;
+  color: inherit;
+}
