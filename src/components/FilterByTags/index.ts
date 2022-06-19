@@ -1,0 +1,1 @@
+export { FilterByTags } from './FilterByTags';
