@@ -1,0 +1,38 @@
+.search {
+  width: 100%;
+
+  .title {
+    @extend %h1;
+    margin-bottom: 38px;
+
+    @include for-mobile {
+      margin-bottom: 25px;
+    }
+  }
+
+  .form {
+    display: flex;
+    align-items: flex-start;
+
+    @include for-mobile {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  }
+
+  .input {
+    flex-grow: 1;
+    margin-right: 14px;
+
+    @include for-mobile {
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
+  }
+
+  .button {
+    flex-shrink: 0;
+    width: 233px;
+  }
+}
