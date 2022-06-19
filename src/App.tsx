@@ -1,4 +1,9 @@
-import React from 'react';
-import { Layout } from './components/Layout';
+import * as React from 'react';
+import { ErrorBoundry } from './components/ErrorBoundry/ErrorBoundry';
+import MainPage from './pages/MainPage/MainPage';
 
-export const App: React.FC = () => <Layout>wefwef</Layout>;
+export const App: React.FC = () => (
+  <ErrorBoundry>
+    <MainPage />
+  </ErrorBoundry>
+);
