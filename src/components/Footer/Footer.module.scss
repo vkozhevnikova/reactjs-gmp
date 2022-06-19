@@ -1,0 +1,18 @@
+.footer {
+  background-color: $bg-dark;
+
+  .container {
+    padding-top: 23px;
+    padding-bottom: 23px;
+  }
+
+  .logo {
+    display: block;
+    width: 152px;
+    margin: auto;
+
+    @include for-mobile {
+      width: 100px;
+    }
+  }
+}
