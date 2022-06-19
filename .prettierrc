@@ -5,6 +5,8 @@
   "printWidth": 120,
   "endOfLine": "auto",
   "jsxSingleQuote": true,
+  "bracketSameLine": false,
+  "jsxBracketSameLine": false,
   "overrides": [
     {
       "files": ["**/*.html"],

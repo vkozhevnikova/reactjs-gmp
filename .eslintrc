@@ -10,6 +10,7 @@
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
     "prettier"
   ],
   "parser": "@typescript-eslint/parser",
@@ -53,6 +54,7 @@
         "ts": "never",
         "tsx": "never"
       }
-   ]
+    ],
+    "react/state-in-constructor": ["error", "never"]
   }
 }

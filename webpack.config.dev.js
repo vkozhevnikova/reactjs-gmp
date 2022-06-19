@@ -77,15 +77,7 @@ module.exports = {
       },
       {
         test: /\.(gif|png|jpe?g|svg|woff|woff2)$/i,
-        use: [
-          'file-loader',
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              disable: true,
-            },
-          },
-        ],
+        type: 'asset/resource'
       },
     ],
   },
