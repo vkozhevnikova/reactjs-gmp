@@ -1,2 +1,7 @@
-$tablet: 'screen and (max-width: 1025px)';
-$mobile: 'screen and (max-width: 769px)';
+@mixin for-mobile {
+  @media screen and (max-width: 769px) { @content; }
+}
+
+@mixin for-tablet {
+  @media screen and (max-width: 1025px) { @content; }
+}

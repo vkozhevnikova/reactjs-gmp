@@ -7,27 +7,36 @@
 }
 
 @font-face {
-  font-family: "Montserrat";
-  src: url("./assets/fonts/Montserrat/Montserrat-Regular.woff2") format("woff2"),
-  url("./assets/fonts/Montserrat/Montserrat-Regular.woff") format("woff");
+  font-family: 'Montserrat';
+  src: url('assets/fonts/Montserrat/Montserrat-Light.woff2') format('woff2'),
+    url('assets/fonts/Montserrat/Montserrat-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('assets/fonts/Montserrat/Montserrat-Regular.woff2') format('woff2'),
+    url('assets/fonts/Montserrat/Montserrat-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Montserrat";
-  src: url("./assets/fonts/Montserrat/Montserrat-Medium.woff2") format("woff2"),
-  url("./assets/fonts/Montserrat/Montserrat-Medium.woff") format("woff");
+  font-family: 'Montserrat';
+  src: url('assets/fonts/Montserrat/Montserrat-Medium.woff2') format('woff2'),
+    url('assets/fonts/Montserrat/Montserrat-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Montserrat";
-  src: url("./assets/fonts/Montserrat/Montserrat-Bold.woff2") format("woff2"),
-  url("./assets/fonts/Montserrat/Montserrat-Bold.woff") format("woff");
+  font-family: 'Montserrat';
+  src: url('assets/fonts/Montserrat/Montserrat-Bold.woff2') format('woff2'),
+    url('assets/fonts/Montserrat/Montserrat-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -35,23 +44,23 @@
 
 html {
   font-size: 16px;
-  font-family: $f_montserrat;
+  font-family: $f-montserrat;
   line-height: 160%;
-  height: 100%;
+  min-height: 100%;
 }
 
 body {
-  background-color: $white;
-  height: 100%;
+  background-color: $black;
+  color: $white;
 }
 
 a {
-  color: $primary;
+  color: $white;
   text-decoration: none;
   transition: all 0.3s linear;
 
   &:hover {
-    color: $white;
+    color: $primary;
   }
 }
 
