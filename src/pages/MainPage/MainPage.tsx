@@ -3,6 +3,7 @@ import movies from '../../data/movies.json';
 import genres from '../../data/genre.json';
 import genreForFilter from '../../data/genreForFilter.json';
 
+import { ErrorBoundary } from '../../components/ErrorBoundary';
 import { Layout } from '../../components/Layout';
 import { MovieList } from '../../components/MovieList';
 import { FilterByTags } from '../../components/FilterByTags';
@@ -22,7 +23,10 @@ const MainPage = () => {
       <div className={styles.filterPanel}>
         <FilterByTags options={optionsForFilter} />
       </div>
-      <MovieList movies={movies} />
+
+      <ErrorBoundary>
+        <MovieList movies={movies} />
+      </ErrorBoundary>
     </Layout>
   );
 };
