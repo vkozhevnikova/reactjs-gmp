@@ -33,6 +33,7 @@
 
   .genre {
     @extend %p-hint;
+
     color: $white3;
 
     &::after {
@@ -46,6 +47,7 @@
 
   .year {
     @extend %p-hint;
+
     display: inline-block;
     border: 1px solid $border-grey;
     border-radius: 4px;

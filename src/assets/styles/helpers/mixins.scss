@@ -5,15 +5,7 @@
 }
 
 @mixin placeholder($color) {
-  &::input-placeholder {
-    color: $color;
-  }
-
-  &:placeholder {
-    color: $color;
-  }
-
-  &:input-placeholder {
+  &::placeholder {
     color: $color;
   }
 }

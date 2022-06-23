@@ -62,10 +62,20 @@
     "at-rule-no-unknown": [
       true,
       {
-        "ignoreAtRules": ["import-normalise", "mixin", "include"]
+        "ignoreAtRules": [
+          "import-normalise",
+          "mixin",
+          "include",
+          "extend",
+          "use",
+          "function",
+          "return"
+        ]
       }
     ],
     "no-descending-specificity": null,
-    "selector-max-id": 1
+    "selector-max-id": 1,
+    "selector-class-pattern": "^[a-z][a-zA-Z0-9]+$",
+    "indentation": 2
   }
 }
