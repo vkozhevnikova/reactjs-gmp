@@ -11,6 +11,7 @@ module.exports = {
     filename: '[name].bundle.js',
     chunkFilename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    assetModuleFilename: 'assets/[hash][ext][query]'
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.ts', '.tsx', '.scss', '.css'],
@@ -77,7 +78,22 @@ module.exports = {
       },
       {
         test: /\.(gif|png|jpe?g|svg|woff|woff2)$/i,
+        exclude: [
+          path.join(__dirname, './src/assets/sprites'),
+        ],
         type: 'asset/resource'
+      },
+      {
+        test: /\.svg$/,
+        include: [
+          path.join(__dirname, './src/assets/sprites'),
+        ],
+        use: [
+          {
+            loader: 'svg-sprite-loader',
+            options: {},
+          },
+        ],
       },
     ],
   },
