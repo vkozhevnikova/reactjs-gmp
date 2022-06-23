@@ -1,6 +1,6 @@
 import * as React from 'react';
 import cn from 'classnames';
-import { IButtonProps } from './IButtonProps';
+import { IButtonProps } from './interfaces';
 
 import styles from './Button.module.scss';
 

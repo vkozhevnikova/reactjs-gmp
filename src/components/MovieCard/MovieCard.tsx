@@ -1,7 +1,7 @@
 import * as React from 'react';
 import cn from 'classnames';
 import genresList from '../../data/genre.json';
-import { IMovieCardProps } from './IMovieCardProps';
+import { IMovieCardProps } from './interfaces';
 import { getYear } from '../../utils/getYear';
 
 import styles from './MovieCard.module.scss';

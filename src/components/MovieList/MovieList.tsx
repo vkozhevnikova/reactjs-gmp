@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IMovieListProps } from './IMovieListProps';
+import { IMovieListProps } from './interfaces';
 import { MovieCard } from '../MovieCard';
 
 import styles from './MovieList.module.scss';

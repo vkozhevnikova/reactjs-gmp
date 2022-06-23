@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ILayoutProps } from './ILayoutProps';
+import { ILayoutProps } from './interfaces';
 import { Wrapper } from '../Wrapper';
 import { Header } from '../Header';
 import { Footer } from '../Footer';

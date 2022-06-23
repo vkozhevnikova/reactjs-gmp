@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { IErrorBoundryProps } from './IErrorBoundryProps';
+import { IErrorBoundryProps } from './interfaces';
 import { Message } from './Message';
 
 export class ErrorBoundry extends Component<IErrorBoundryProps> {

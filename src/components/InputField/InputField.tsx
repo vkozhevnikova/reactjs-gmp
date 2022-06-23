@@ -1,6 +1,6 @@
 import * as React from 'react';
 import cn from 'classnames';
-import { IInputFieldProps } from './IInputFieldProps';
+import { IInputFieldProps } from './interfaces';
 
 import styles from './InputField.module.scss';
 

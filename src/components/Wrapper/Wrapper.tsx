@@ -1,6 +1,6 @@
 import * as React from 'react';
 import cn from 'classnames';
-import { IWrapperProps } from './IWrapperProps';
+import { IWrapperProps } from './interfaces';
 
 import styles from './Wrapper.module.scss';
 

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import cn from 'classnames';
-import { IFilterByTagsProps } from './IFilterByTagsProps';
+import { IFilterByTagsProps } from './interfaces';
 
 import styles from './FilterByTags.module.scss';
 
