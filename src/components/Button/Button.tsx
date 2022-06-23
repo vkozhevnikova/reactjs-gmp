@@ -6,6 +6,7 @@ import styles from './Button.module.scss';
 
 export const Button: React.FC<IButtonProps> = ({ type = 'button', theme = 'default', children, className }) => {
   return (
+    // eslint-disable-next-line react/button-has-type
     <button type={type} className={cn(styles.button, styles[theme], className)}>
       {children}
     </button>
