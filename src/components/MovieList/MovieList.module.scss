@@ -1,0 +1,31 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -28px;
+  margin-right: -28px;
+
+  @include for-tablet {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
+  @include for-mobile {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .card {
+    width: calc(33.33% - 56px);
+    margin: 0 28px 50px;
+
+    @include for-tablet {
+      width: calc(50% - 40px);
+      margin: 0 20px 40px;
+    }
+
+    @include for-mobile {
+      width: 100%;
+      margin: 0 0 30px;
+    }
+  }
+}

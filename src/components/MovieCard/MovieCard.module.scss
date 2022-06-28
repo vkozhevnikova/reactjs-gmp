@@ -1,0 +1,60 @@
+.card {
+  .preview {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    overflow: hidden;
+
+    img {
+      transition: transform 0.3s ease-in;
+    }
+
+    &:hover img {
+      transform: scale(1.02);
+    }
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .title {
+    display: block;
+    color: $white7;
+    margin-bottom: 8px;
+    margin-right: 5px;
+    transition: color 0.3s linear;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  .genre {
+    @extend %p-hint;
+
+    color: $white3;
+
+    &::after {
+      content: ', ';
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+  }
+
+  .year {
+    @extend %p-hint;
+
+    display: inline-block;
+    border: 1px solid $border-grey;
+    border-radius: 4px;
+    text-align: center;
+    color: $white7;
+    width: 66px;
+    height: 26px;
+    line-height: 26px;
+  }
+}

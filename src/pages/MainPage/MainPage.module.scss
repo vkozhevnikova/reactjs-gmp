@@ -1,0 +1,18 @@
+.filterPanel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  border-bottom: 2px solid $bg-dark;
+  margin-bottom: 75px;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid #000;
+  }
+}

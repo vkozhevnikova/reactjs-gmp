@@ -5,102 +5,56 @@
   },
   "extends": [
     "airbnb",
+    "airbnb-typescript",
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
     "prettier"
   ],
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
     },
     "ecmaVersion": "latest",
-    "sourceType": "module"
+    "sourceType": "module",
+    "project": "./tsconfig.json"
   },
   "plugins": [
-    "prettier",
-    "react"
+    "react",
+    "react-hooks",
+    "@typescript-eslint",
+    "prettier"
   ],
+  "settings": {
+    "import/extensions": [".js", ".jsx", ".ts", ".tsx"],
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
   "rules": {
-    "max-len": [
-      "error",
-      {
-        "code": 120,
-        "ignoreStrings": true,
-        "ignoreComments": true,
-        "ignoreTemplateLiterals": true,
-        "ignorePattern": "^\\s*const \\S+ = /.*/;"
-      }
-    ],
+    "prettier/prettier": ["error"],
     "quotes": ["error", "single"],
-    "semi": ["error", "always"],
-    "jsx-quotes": ["error", "prefer-double"],
-    "space-in-parens": ["error", "never"],
-    "react/jsx-filename-extension": 0,
-    "react/jsx-indent": ["error", 2],
-    "react/function-component-definition": [
-      2,
-      {
-        "namedComponents": "function-declaration",
-        "unnamedComponents": "arrow-function"
-      }
-    ],
-    "react/jsx-curly-spacing": [
-      2,
-      {
-        "when": "never",
-        "children": true,
-        "spacing": {
-          "objectLiterals": "never",
-          "allowMultiline": true
-        }
-      }
-    ],
-    "react/jsx-tag-spacing": [
-      2,
-      {
-        "closingSlash": "never",
-        "beforeSelfClosing": "always",
-        "afterOpening": "never",
-        "beforeClosing": "allow"
-      }
-    ],
-    "react/jsx-uses-react": 0,
-    "react/react-in-jsx-scope": 0,
-    "react/jsx-props-no-spreading": 0,
-    "import/prefer-default-export": 0,
-    "arrow-parens": ["error", "as-needed"],
-    "array-bracket-spacing": ["error", "never"],
-    "object-curly-spacing": ["error", "always"],
-    "template-curly-spacing": ["error", "never"],
-    "comma-dangle": [
+    "no-duplicate-imports": "error",
+    "import/prefer-default-export": "off",
+    "react/function-component-definition": [2, {
+      "namedComponents": "arrow-function"
+    }],
+    "import/extensions": [
       "error",
+      "ignorePackages",
       {
-        "arrays": "always-multiline",
-        "objects": "always-multiline",
-        "functions": "always-multiline",
-        "imports": "always-multiline",
-        "exports": "always-multiline"
+        "": "never",
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
       }
     ],
-    "no-underscore-dangle": ["error", { "allow": ["_id"] }],
-    "no-trailing-spaces": "error",
-    "eol-last": ["error", "always"],
-    "space-unary-ops": [
-      1,
-      {
-        "words": true,
-        "nonwords": true,
-        "overrides": {
-          "++": false,
-          "--": false,
-          "-": false,
-          "!": false
-        }
-      }
-    ],
-    "space-infix-ops": ["error", { "int32Hint": false }],
-    "keyword-spacing": ["error", { "before": true }],
-    "prettier/prettier": ["error"]
+    "react/state-in-constructor": ["error", "never"]
   }
 }

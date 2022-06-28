@@ -1,0 +1,43 @@
+.filter {
+  display: flex;
+
+  .button {
+    @include resetbtn;
+
+    font-size: 16px;
+    line-height: em(20, 16);
+    text-transform: uppercase;
+    color: $white;
+    position: relative;
+    padding: 20px 0;
+    margin-right: 30px;
+    transition: color 0.3s linear;
+
+    @include for-mobile {
+      font-size: 14px;
+      padding: 15px 0;
+      margin-right: 10px;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      border-bottom: 4px solid $primary;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &:hover {
+      color: $primary;
+    }
+
+    &.isActive::after {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.error {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $primary;
+  padding: 100px 40px;
+
+  img {
+    max-width: 200px;
+    margin-bottom: 16px;
+  }
+
+  .title {
+    @extend %h1;
+  }
+
+  p {
+    @extend %p-base;
+  }
+}

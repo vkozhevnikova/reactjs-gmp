@@ -6,14 +6,15 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
   mode: 'production',
-  entry: './src/index.js',
+  entry: './src/index.tsx',
   output: {
     filename: '[name].bundle.js',
     chunkFilename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    assetModuleFilename: 'assets/[hash][ext][query]'
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json'],
+    extensions: ['.js', '.jsx', '.json', '.ts', '.tsx', '.scss', '.css'],
     modules: [path.resolve(__dirname, './src'), 'node_modules'],
   },
   optimization: {
@@ -34,8 +35,26 @@ module.exports = {
         },
       },
       {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+      {
         test: /\.scss$/,
-        use: [{ loader: MiniCssExtractPlugin.loader }, 'css-loader', 'sass-loader', 'postcss-loader'],
+        use: [
+          { loader: MiniCssExtractPlugin.loader },
+          'css-loader',
+          'sass-loader',
+          {
+            loader: 'style-resources-loader',
+            options: {
+              patterns: [
+                './src/assets/styles/main.scss',
+              ]
+            }
+          },
+          'postcss-loader'
+        ],
       },
       {
         test: /\.html$/,
@@ -47,31 +66,21 @@ module.exports = {
         ],
       },
       {
-        test: /\.(gif|png|jpe?g|svg)$/i,
+        test: /\.(gif|png|jpe?g|svg|woff|woff2)$/i,
+        exclude: [
+          path.join(__dirname, './src/assets/sprites'),
+        ],
+        type: 'asset/resource'
+      },
+      {
+        test: /\.svg$/,
+        include: [
+          path.join(__dirname, './src/assets/sprites'),
+        ],
         use: [
-          'file-loader',
           {
-            loader: 'image-webpack-loader',
-            options: {
-              mozjpeg: {
-                progressive: true,
-                quality: 60,
-              },
-              optipng: {
-                enabled: false,
-              },
-              pngquant: {
-                quality: '65-90',
-                speed: 4,
-              },
-              gifsicle: {
-                interlaced: false,
-                optimizationLevel: 3,
-              },
-              webp: {
-                quality: 60,
-              },
-            },
+            loader: 'svg-sprite-loader',
+            options: {},
           },
         ],
       },
