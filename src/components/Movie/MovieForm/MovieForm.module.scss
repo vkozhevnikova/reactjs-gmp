@@ -1,0 +1,45 @@
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.field {
+  margin-bottom: 30px;
+
+  &:nth-child(odd):not(.full) {
+    width: calc(70% - 15px);
+    margin-right: 15px;
+
+    @include for-tablet {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+
+  &:nth-child(even):not(.full) {
+    width: calc(30% - 15px);
+    margin-left: 15px;
+
+    @include for-tablet {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+
+  &.full {
+    width: 100%;
+  }
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+
+  .btn {
+    min-width: 182px;
+    margin-left: 13px;
+  }
+}
