@@ -1,14 +1,15 @@
-import * as React from 'react';
+import React from 'react';
 import cn from 'classnames';
-import genresList from '../../data/genre.json';
+import genresList from '../../../data/genre.json';
 import { IMovieCardProps } from './interfaces';
-import { IGenresProps } from '../../types/IGenresProps';
-import { getYear } from '../../utils/getYear';
+import { getYear } from '../../../utils/date';
+
+import { MovieContextMenu } from '../MovieContextMenu';
 
 import styles from './MovieCard.module.scss';
 
-export const MovieCard: React.FC<IMovieCardProps> = ({ movie, className }) => {
-  const { url, title, preview, genre, releaseDate } = movie;
+export const MovieCard: React.FC<IMovieCardProps> = ({ movie, className, onEdit, onDelete }) => {
+  const { id, url, title, preview, genre, releaseDate } = movie;
 
   const renderItem = (item: string) => {
     return (
@@ -22,6 +23,15 @@ export const MovieCard: React.FC<IMovieCardProps> = ({ movie, className }) => {
 
   return (
     <div className={cn(styles.card, className)}>
+      <MovieContextMenu className={styles.menuContext}>
+        <button type='button' className={styles.actionBtn} onClick={() => onEdit(id)}>
+          Edit
+        </button>
+        <button type='button' className={styles.actionBtn} onClick={() => onDelete(id)}>
+          Delete
+        </button>
+      </MovieContextMenu>
+
       <a href={url} className={styles.preview}>
         <img src={preview} alt={title} />
       </a>
