@@ -1,0 +1,66 @@
+.datepicker {
+  position: relative;
+
+  .calendarIcon {
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    width: 24px;
+    height: 24px;
+    color: $primary;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .btn {
+    @include resetbtn;
+    width: 26px;
+    height: 26px;
+    color: $primary;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 4px;
+    transition: color 0.3s linear;
+
+    svg {
+      width: 50%;
+      height: 50%;
+    }
+
+    @include for-hover {
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+
+  .btnPrev {
+    svg {
+      transform: rotate(90deg);
+    }
+  }
+
+  .btnNext {
+    svg {
+      transform: rotate(-90deg);
+    }
+  }
+
+  .select {
+    background: transparent;
+    border: 1px solid $white;
+    padding: 2px 5px;
+    margin: 0 5px;
+    border-radius: 4px;
+
+    &:focus {
+      outline: 1px solid rgba($white, 0.5);
+    }
+  }
+}
