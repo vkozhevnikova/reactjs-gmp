@@ -1,0 +1,15 @@
+.deleteMovie {
+  width: 90vw;
+  max-width: 522px;
+
+  .title {
+    @extend %h1;
+    margin-top: 0;
+    margin-bottom: 38px;
+  }
+
+  .buttons {
+    text-align: right;
+    margin-top: 52px;
+  }
+}
