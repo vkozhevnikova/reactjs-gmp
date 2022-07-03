@@ -21,7 +21,9 @@
 
 .select {
   @include resetbtn;
+
   @extend %p-md;
+
   appearance: none;
   font-family: $f-montserrat;
   border-radius: 0;

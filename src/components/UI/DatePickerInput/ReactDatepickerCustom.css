@@ -12,7 +12,7 @@
   font-size: 20px;
   line-height: 1.2em;
   width: 100%;
-  background-color: rgba(85, 85, 85, 30%);
+  background-color: rgb(85 85 85 / 30%);
   border: none;
   padding: 0 20px;
   color: #fff;
@@ -22,11 +22,11 @@
 }
 
 .react-datepicker__input-container input:focus {
-  outline: 1px solid rgba(255, 255, 255, 50%);
+  outline: 1px solid rgb(255 255 255 / 50%);
 }
 
 .react-datepicker__input-container input::placeholder {
-  color: rgba(255, 255, 255, 30%);
+  color: rgb(255 255 255 / 30%);
 }
 
 @media screen and (max-width: 769px) {
@@ -92,5 +92,5 @@
 .react-datepicker__year-text--selected:hover,
 .react-datepicker__year-text--in-selecting-range:hover,
 .react-datepicker__year-text--in-range:hover {
-  background: rgba(255, 255, 255, 30%);
+  background: rgb(255 255 255 / 30%);
 }

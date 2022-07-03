@@ -3,7 +3,9 @@
 
   .button {
     @include resetbtn;
+
     @extend %p-md;
+
     text-transform: uppercase;
     color: $white;
     position: relative;

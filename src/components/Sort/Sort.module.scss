@@ -4,6 +4,7 @@
 
   .caption {
     @extend %p-md;
+
     letter-spacing: 0.8px;
     text-transform: uppercase;
     color: $white5;

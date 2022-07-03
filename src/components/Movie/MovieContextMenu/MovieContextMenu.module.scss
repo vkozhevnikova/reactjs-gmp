@@ -4,6 +4,7 @@
   .btnOpen,
   .btnClose {
     @include resetbtn;
+
     position: absolute;
     text-align: center;
     color: $white;
@@ -18,7 +19,7 @@
     line-height: 36px;
     border-radius: 50%;
     background-color: $black;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 4px rgb(0 0 0 / 20%);
 
     svg {
       width: 19px;

@@ -77,7 +77,9 @@
 
   .actionBtn {
     @include resetbtn;
+
     @extend %p-md;
+
     background-color: transparent;
     color: $white;
     padding: 7px 20px;
