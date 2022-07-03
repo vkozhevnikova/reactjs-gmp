@@ -1,0 +1,14 @@
+.label {
+  display: block;
+  font: {
+    family: $f-montserrat;
+    weight: 500;
+    size: 16px;
+  }
+
+  line-height: em(20, 16);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: $primary;
+  margin-bottom: 13px;
+}
