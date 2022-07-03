@@ -1,0 +1,39 @@
+.selectContainer {
+  position: relative;
+
+  .icon {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    right: 0;
+    width: 12px;
+    height: 12px;
+    color: $primary;
+    pointer-events: none;
+    transform: translateY(-50%);
+
+    @include for-mobile {
+      width: 9px;
+      height: 9px;
+    }
+  }
+}
+
+.select {
+  @include resetbtn;
+  @extend %p-md;
+  appearance: none;
+  font-family: $f-montserrat;
+  border-radius: 0;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: $white;
+  padding-right: 26px;
+  outline: 0;
+
+  @include for-mobile {
+    font-size: 12px;
+    padding-right: 15px;
+  }
+}
