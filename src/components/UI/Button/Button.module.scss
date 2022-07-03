@@ -25,10 +25,12 @@
     color: $white;
     padding: 15px 30px;
 
-    &:hover {
-      background-color: transparent;
-      border-color: $primary;
-      color: $primary;
+    @include for-hover {
+      &:hover {
+        background-color: transparent;
+        border-color: $primary;
+        color: $primary;
+      }
     }
   }
 
@@ -38,10 +40,12 @@
     color: $primary;
     padding: 15px 30px;
 
-    &:hover {
-      background-color: $primary;
-      border-color: $primary;
-      color: $white;
+    @include for-hover {
+      &:hover {
+        background-color: $primary;
+        border-color: $primary;
+        color: $white;
+      }
     }
   }
 
@@ -51,10 +55,12 @@
     color: $primary;
     padding: 11px 18px;
 
-    &:hover {
-      background-color: $primary;
-      border-color: $primary;
-      color: $white;
+    @include for-hover {
+      &:hover {
+        background-color: $primary;
+        border-color: $primary;
+        color: $white;
+      }
     }
   }
 }

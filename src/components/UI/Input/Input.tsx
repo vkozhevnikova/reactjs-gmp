@@ -1,25 +1,29 @@
 import * as React from 'react';
 import cn from 'classnames';
-import { IInputFieldProps } from './interfaces';
+import { IInputProps } from './interfaces';
 
-import styles from './InputField.module.scss';
+import styles from './Input.module.scss';
 
-export const InputField: React.FC<IInputFieldProps> = ({
-  type = 'text',
+export const Input: React.FC<IInputProps> = ({
+  id,
+  type,
   placeholder,
   value,
   name,
   disabled,
   onChange,
   className,
+  readonly,
 }) => {
   return (
     <input
+      id={id}
       type={type}
       name={name}
       value={value}
       placeholder={placeholder}
       disabled={disabled}
+      readOnly={readonly}
       onChange={onChange}
       className={cn(styles.input, className)}
     />

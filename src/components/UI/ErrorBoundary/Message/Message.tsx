@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './Message.module.scss';
 
-import icon from '../../../assets/images/warning.png';
+import icon from '../../../../assets/images/warning.png';
 
 export const Message: React.FC = () => {
   return (
