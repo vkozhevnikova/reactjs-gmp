@@ -11,7 +11,11 @@ export const FilterByTags: React.FC<IFilterByTagsProps> = ({ options }) => {
     const caption = isAllItem ? 'All' : options[item];
 
     return (
-      <button key={item} className={cn(styles.button, { [styles.isActive]: isAllItem })} type='button'>
+      <button
+        key={item}
+        className={cn(styles.button, { [styles.isActive]: isAllItem })}
+        type='button'
+      >
         {caption}
       </button>
     );

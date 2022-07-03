@@ -43,9 +43,8 @@
 }
 
 html {
-  font-size: 16px;
+  @extend %p-md;
   font-family: $f-montserrat;
-  line-height: 160%;
   min-height: 100%;
 }
 
@@ -54,20 +53,28 @@ body {
   color: $white;
 }
 
-
-
 a {
   color: $white;
   text-decoration: none;
   transition: all 0.3s linear;
 
-  &:hover {
-    color: $primary;
+  @include for-hover {
+    &:hover {
+      color: $primary;
+    }
   }
+}
+
+p {
+  @extend %p-base;
 }
 
 img {
   max-width: 100%;
   max-height: 100%;
   vertical-align: middle;
+}
+
+.overflow {
+  overflow: hidden;
 }

@@ -1,6 +1,6 @@
-import React, { ReactEventHandler, useState } from 'react';
-import { Button } from '../Button';
-import { InputField } from '../InputField';
+import React, { useState } from 'react';
+import { Button } from '../UI/Button';
+import { Input } from '../UI/Input';
 
 import styles from './Search.module.scss';
 
@@ -18,8 +18,9 @@ export const Search: React.FC = () => {
       <div className={styles.title}>Find your movie</div>
 
       <form className={styles.form}>
-        <InputField
+        <Input
           type='text'
+          id='search'
           name='search'
           value={value}
           placeholder='What do you want to watch?'

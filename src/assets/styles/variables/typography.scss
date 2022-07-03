@@ -43,6 +43,12 @@
   }
 }
 
+%p-md {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: em(20, 16);
+}
+
 %p-hint {
   font-weight: 500;
   font-size: 14px;

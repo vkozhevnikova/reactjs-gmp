@@ -3,9 +3,7 @@
 
   .button {
     @include resetbtn;
-
-    font-size: 16px;
-    line-height: em(20, 16);
+    @extend %p-md;
     text-transform: uppercase;
     color: $white;
     position: relative;
@@ -31,8 +29,10 @@
       visibility: hidden;
     }
 
-    &:hover {
-      color: $primary;
+    @include for-hover {
+      &:hover {
+        color: $primary;
+      }
     }
 
     &.isActive::after {

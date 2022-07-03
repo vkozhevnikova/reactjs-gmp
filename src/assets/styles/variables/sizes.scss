@@ -5,4 +5,33 @@
   padding-right: 60px;
   margin-left: auto;
   margin-right: auto;
+
+  @include for-tablet {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @include for-mobile {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+%form-field {
+  @extend %p-base;
+  font-family: $f-montserrat;
+  width: 100%;
+  background-color: rgba($grey, 0.3);
+  border: none;
+  padding: 0 20px;
+  color: $white;
+  height: 56px;
+  border-radius: 4px;
+  transition: all 0.3s linear;
+
+  @include placeholder(rgba($white, 0.3));
+
+  &:focus {
+    outline: 1px solid rgba($white, 0.5);
+  }
 }
