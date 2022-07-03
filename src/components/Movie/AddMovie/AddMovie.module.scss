@@ -1,0 +1,10 @@
+.addMovie {
+  width: 90vw;
+  max-width: 855px;
+}
+
+.title {
+  @extend %h1;
+  margin-top: 0;
+  margin-bottom: 38px;
+}
