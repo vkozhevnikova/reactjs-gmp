@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import cn from 'classnames'
+import cn from 'classnames';
 import { ISelectProps } from './interfaces';
 
 import { Icon } from '../Icon';
@@ -34,7 +34,7 @@ export const Select: React.FC<ISelectProps> = ({
     return (
       <button
         key={option}
-        type="button"
+        type='button'
         className={cn(styles.option, { [styles.isActive]: isActive })}
         onClick={() => handleClickOption(option)}
       >
@@ -51,20 +51,15 @@ export const Select: React.FC<ISelectProps> = ({
 
   return (
     <div className={cn(styles.select, { [styles.disabled]: disabled })}>
-      <div
-        className={styles.toggle}
-        onClick={handlerOpen}
-        role='button'
-        aria-hidden='true'
-      >
+      <div className={styles.toggle} onClick={handlerOpen} role='button' aria-hidden='true'>
         <Icon icon={iconArrow} className={styles.icon} />
-        <input type="hidden" value={value} id={id} name={name} disabled={disabled} />
+        <input type='hidden' value={value} id={id} name={name} disabled={disabled} />
         {options[value]}
       </div>
       {isOpen && (
         <div className={styles.dropdown}>
           {placeholder && (
-            <button type="button" className={cn(styles.option, styles.placeholder)}>
+            <button type='button' className={cn(styles.option, styles.placeholder)}>
               {placeholder}
             </button>
           )}

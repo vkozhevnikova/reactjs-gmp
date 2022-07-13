@@ -12,7 +12,7 @@ export const EditMovie: React.FC<IEditMovieProps> = ({ movieId }) => {
 
   useEffect(() => {
     fetchMovieById(movieId)
-      .then((movie) => {
+      .then(movie => {
         setMovieData(movie);
       })
       .catch(console.error);

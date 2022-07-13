@@ -30,7 +30,7 @@ const MainPage = () => {
 
   useEffect(() => {
     fetchMovies()
-      .then((result) => {
+      .then(result => {
         setMovies(result);
       })
       .catch(console.error);

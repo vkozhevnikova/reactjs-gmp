@@ -3,6 +3,7 @@
 
   .toggle {
     @extend %p-md;
+
     position: relative;
     text-transform: uppercase;
     letter-spacing: 0.8px;
@@ -48,6 +49,7 @@
 
   .option {
     @include resetbtn;
+
     @extend %p-base;
 
     display: block;
