@@ -17,3 +17,16 @@ export const MONTH = [
 ];
 
 export const YEARS = range(1700, getYear(new Date()) + 1, 1);
+
+export const GENRES = {
+  'action': 'Action',
+  'adventure': 'Adventure',
+  'drama': 'Drama',
+  'biographical': 'Biography',
+  'music': 'Music',
+  'oscar': 'Oscar winning Movie',
+  'doc': 'Documentary',
+  'comedy': 'Comedy',
+  'horror': 'Horror',
+  'criminal': 'Crime'
+};

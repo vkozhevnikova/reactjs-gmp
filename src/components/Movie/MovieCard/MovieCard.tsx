@@ -1,6 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
-import genresList from '../../../data/genre.json';
+import { GENRES } from '../../../core/constants';
 import { IMovieCardProps } from './interfaces';
 import { getYear } from '../../../utils/date';
 
@@ -15,7 +15,7 @@ export const MovieCard: React.FC<IMovieCardProps> = ({ movie, className, onEdit,
   const renderItem = (item: string) => {
     return (
       <span key={item} className={styles.genre}>
-        {genresList[item]}
+        {GENRES[item]}
       </span>
     );
   };

@@ -3,7 +3,7 @@ import cn from 'classnames';
 import { IMovieFormProps } from './interfaces';
 import { IMovieProps } from '../../../types/IMovieProps';
 
-import genres from '../../../data/genre.json';
+import { GENRES } from '../../../core/constants';
 
 import { InputWithLabel } from '../../UI/Input';
 import { DatePickerInputWithLabel } from '../../UI/DatePickerInput';
@@ -110,7 +110,7 @@ export const MovieForm: React.FC<IMovieFormProps> = ({ movie }) => {
           id='movie-genre'
           forId='movie-genre'
           onChange={handleSelectMultipleChange}
-          options={genres}
+          options={GENRES}
         />
       </div>
       <div className={styles.field}>
