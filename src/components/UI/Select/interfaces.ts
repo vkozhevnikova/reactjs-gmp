@@ -5,5 +5,5 @@ export interface ISelectProps {
   placeholder?: string;
   value: string;
   disabled?: boolean;
-  onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+  onChange: (value: string) => void;
 }

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import cn from 'classnames'
 import { ISelectProps } from './interfaces';
 
 import { Icon } from '../Icon';
@@ -16,11 +17,29 @@ export const Select: React.FC<ISelectProps> = ({
   disabled,
   onChange,
 }) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const handlerOpen = (event: React.SyntheticEvent) => {
+    event.preventDefault();
+    setIsOpen(true);
+  };
+
+  const handleClickOption = (option: string) => {
+    onChange(option);
+    setIsOpen(false);
+  };
+
   const renderOption = (option: string) => {
+    const isActive = value === option;
     return (
-      <option key={option} value={option}>
+      <button
+        key={option}
+        type="button"
+        className={cn(styles.option, { [styles.isActive]: isActive })}
+        onClick={() => handleClickOption(option)}
+      >
         {options[option]}
-      </option>
+      </button>
     );
   };
 
@@ -31,19 +50,27 @@ export const Select: React.FC<ISelectProps> = ({
   };
 
   return (
-    <div className={styles.selectContainer}>
-      <select
-        id={id}
-        name={name}
-        value={value}
-        disabled={disabled}
-        onChange={onChange}
-        className={styles.select}
+    <div className={cn(styles.select, { [styles.disabled]: disabled })}>
+      <div
+        className={styles.toggle}
+        onClick={handlerOpen}
+        role='button'
+        aria-hidden='true'
       >
-        {placeholder && <option>{placeholder}</option>}
-        {renderOptionsGroup(options)}
-      </select>
-      <Icon icon={iconArrow} className={styles.icon} />
+        <Icon icon={iconArrow} className={styles.icon} />
+        <input type="hidden" value={value} id={id} name={name} disabled={disabled} />
+        {options[value]}
+      </div>
+      {isOpen && (
+        <div className={styles.dropdown}>
+          {placeholder && (
+            <button type="button" className={cn(styles.option, styles.placeholder)}>
+              {placeholder}
+            </button>
+          )}
+          {renderOptionsGroup(options)}
+        </div>
+      )}
     </div>
   );
 };

@@ -13,6 +13,7 @@ import styles from './MainPage.module.scss';
 
 const MainPage = () => {
   const [movies, setMovies] = useState([]);
+  const [sorting, setSorting] = useState('releaseDate');
 
   const genreForFilter = ['doc', 'comedy', 'horror', 'criminal'];
   const optionsForFilter = genreForFilter.reduce((acc, genre) => {
@@ -43,9 +44,9 @@ const MainPage = () => {
           caption={I18Y[LOCALE].SORT_BY_CAPTION}
           id='sorting-movies'
           name='sorting-movies'
-          value=''
+          value={sorting}
           options={optionsForSort}
-          onChange={() => {}}
+          onChange={setSorting}
           className={styles.sort}
         />
       </div>
