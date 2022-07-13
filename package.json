@@ -7,12 +7,14 @@
     "start:dev": "cross-env NODE_ENV=development webpack serve --open",
     "build:dev": "cross-env NODE_ENV=development webpack",
     "build:prod": "cross-env NODE_ENV=production webpack",
-    "format": "prettier --write './src/**/*.{ts,tsx,js,jsx,json,css,scss,md}'",
+    "format": "prettier --check './src/**/*.{ts,tsx,js,jsx,json,css,scss,md}'",
+    "format:fix": "prettier --write './src/**/*.{ts,tsx,js,jsx,json,css,scss,md}'",
     "eslint": "eslint . --ext './src/**/*.{js,.jsx,.ts,.tsx,.json}'",
     "eslint:fix": "npm run eslint -- --fix",
     "stylelint": "stylelint './src/**/*.{scss,css}'",
     "stylelint:fix": "npm run stylelint -- --fix",
-    "lint:fix": "npm run format && npm rum eslint:fix && npm run stylelint:fix",
+    "lint": "npm run format && npm run eslint && npm run stylelint",
+    "lint:fix": "npm run format:fix && npm rum eslint:fix && npm run stylelint:fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
