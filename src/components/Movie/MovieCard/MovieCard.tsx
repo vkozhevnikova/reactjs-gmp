@@ -7,6 +7,7 @@ import { getYear } from '../../../utils/date';
 import { MovieContextMenu } from '../MovieContextMenu';
 
 import styles from './MovieCard.module.scss';
+import { I18Y, LOCALE } from '../../../core/i18y';
 
 export const MovieCard: React.FC<IMovieCardProps> = ({ movie, className, onEdit, onDelete }) => {
   const { id, url, title, preview, genre, releaseDate } = movie;
@@ -25,10 +26,10 @@ export const MovieCard: React.FC<IMovieCardProps> = ({ movie, className, onEdit,
     <div className={cn(styles.card, className)}>
       <MovieContextMenu className={styles.menuContext}>
         <button type='button' className={styles.actionBtn} onClick={() => onEdit(id)}>
-          Edit
+          {I18Y[LOCALE].BUTTON_EDIT}
         </button>
         <button type='button' className={styles.actionBtn} onClick={() => onDelete(id)}>
-          Delete
+          {I18Y[LOCALE].BUTTON_DELETE}
         </button>
       </MovieContextMenu>
 

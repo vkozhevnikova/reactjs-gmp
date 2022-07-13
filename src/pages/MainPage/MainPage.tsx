@@ -2,6 +2,7 @@ import * as React from 'react';
 import movies from '../../data/movies.json';
 import genres from '../../data/genre.json';
 import genreForFilter from '../../data/genreForFilter.json';
+import { I18Y, LOCALE } from '../../core/i18y';
 
 import { ErrorBoundary } from '../../components/UI/ErrorBoundary';
 import { Layout } from '../../components/Layout';
@@ -20,8 +21,8 @@ const MainPage = () => {
   }, {});
 
   const optionsForSort = {
-    releaseDate: 'Release date',
-    rating: 'Rating',
+    releaseDate: I18Y[LOCALE].RELEASE_DATE,
+    rating: I18Y[LOCALE].RATING,
   };
 
   return (
@@ -29,7 +30,7 @@ const MainPage = () => {
       <div className={styles.filterPanel}>
         <FilterByTags options={optionsForFilter} />
         <Sort
-          caption='Sort by'
+          caption={I18Y[LOCALE].SORT_BY_CAPTION}
           id='sorting-movies'
           name='sorting-movies'
           value=''

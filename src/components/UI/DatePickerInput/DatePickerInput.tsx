@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import cn from 'classnames';
 import DatePicker from 'react-datepicker';
-import { MONTH, YEARS } from '../../../constants';
+import { MONTH, YEARS } from '../../../core/constants';
 import { getYear, getMonth } from '../../../utils/date';
 import { IDatePickerInputProps } from './interfaces';
 import { Icon } from '../Icon';

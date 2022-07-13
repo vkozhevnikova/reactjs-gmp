@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { LOCALE, I18Y } from '../../core/i18y';
 import { Wrapper } from '../Wrapper';
 import { Button } from '../UI/Button';
 import { Search } from '../Search';
@@ -31,7 +32,7 @@ export const Header: React.FC = () => {
       <Wrapper className={styles.container}>
         <div className={styles.topPanel}>
           <a href='/' className={styles.logo}>
-            <img src={logo} alt='NetflixRoulette' />
+            <img src={logo} alt={I18Y[LOCALE].LOGOTYPE_ALT} />
           </a>
 
           <Button
@@ -40,7 +41,7 @@ export const Header: React.FC = () => {
             className={styles.addMovieButton}
             onClick={handlerOpenModal}
           >
-            <Icon icon={plusIcon} /> Add movie
+            <Icon icon={plusIcon} /> {I18Y[LOCALE].BUTTON_ADD_MOVIE}
           </Button>
 
           <Modal isOpen={isOpenModal} handlerModal={setIsOpenModal}>

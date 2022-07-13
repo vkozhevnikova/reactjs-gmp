@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { I18Y, LOCALE } from '../../../core/i18y';
 import { IEditMovieProps } from './interfaces';
 import { IMovieProps } from '../../../types/IMovieProps';
 import { MovieForm } from '../MovieForm';
@@ -17,7 +18,7 @@ export const EditMovie: React.FC<IEditMovieProps> = ({ movieId }) => {
 
   return (
     <div className={styles.editMovie}>
-      <h2 className={styles.title}>Edit movie</h2>
+      <h2 className={styles.title}>{I18Y[LOCALE].POPUP_TITLE_EDIT_MOVIE}</h2>
       <MovieForm movie={movieData} />
     </div>
   );
