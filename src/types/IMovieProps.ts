@@ -5,7 +5,7 @@ export interface IMovieProps {
   title: string;
   preview: string;
   genre: string[];
-  releaseDate: string;
+  releaseDate: string | Date;
   runtime: number;
   overview: string;
   rating: number;

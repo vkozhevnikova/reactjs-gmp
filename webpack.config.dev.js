@@ -11,7 +11,7 @@ module.exports = {
     filename: '[name].bundle.js',
     chunkFilename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    assetModuleFilename: 'assets/[hash][ext][query]'
+    assetModuleFilename: 'assets/[hash][ext][query]',
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.ts', '.tsx', '.scss', '.css'],
@@ -51,6 +51,10 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
         test: /\.scss$/,
         use: [
           { loader: MiniCssExtractPlugin.loader },
@@ -59,12 +63,10 @@ module.exports = {
           {
             loader: 'style-resources-loader',
             options: {
-              patterns: [
-                './src/assets/styles/main.scss',
-              ]
-            }
+              patterns: ['./src/assets/styles/main.scss'],
+            },
           },
-          'postcss-loader'
+          'postcss-loader',
         ],
       },
       {
@@ -78,16 +80,12 @@ module.exports = {
       },
       {
         test: /\.(gif|png|jpe?g|svg|woff|woff2)$/i,
-        exclude: [
-          path.join(__dirname, './src/assets/sprites'),
-        ],
-        type: 'asset/resource'
+        exclude: [path.join(__dirname, './src/assets/sprites')],
+        type: 'asset/resource',
       },
       {
         test: /\.svg$/,
-        include: [
-          path.join(__dirname, './src/assets/sprites'),
-        ],
+        include: [path.join(__dirname, './src/assets/sprites')],
         use: [
           {
             loader: 'svg-sprite-loader',

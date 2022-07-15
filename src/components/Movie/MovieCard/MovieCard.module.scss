@@ -1,0 +1,102 @@
+.card {
+  position: relative;
+
+  .preview {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    overflow: hidden;
+
+    img {
+      transition: transform 0.3s ease-in;
+    }
+
+    @include for-hover {
+      &:hover img {
+        transform: scale(1.02);
+      }
+    }
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .title {
+    display: block;
+    color: $white7;
+    margin-bottom: 8px;
+    margin-right: 5px;
+    transition: color 0.3s linear;
+
+    @include for-hover {
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  .genre {
+    @extend %p-hint;
+
+    color: $white3;
+
+    &::after {
+      content: ', ';
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+  }
+
+  .year {
+    @extend %p-hint;
+
+    display: inline-block;
+    border: 1px solid $border-grey;
+    border-radius: 4px;
+    text-align: center;
+    color: $white7;
+    width: 66px;
+    height: 26px;
+    line-height: 26px;
+  }
+
+  .menuContext {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 1;
+    width: 190px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s linear, visibility 0.2s linear;
+  }
+
+  .actionBtn {
+    @include resetbtn;
+
+    @extend %p-md;
+
+    background-color: transparent;
+    color: $white;
+    padding: 7px 20px;
+    text-align: left;
+    transition: background-color 0.3s linear;
+
+    @include for-hover {
+      &:hover {
+        background-color: $primary;
+      }
+    }
+  }
+
+  @include for-hover {
+    &:hover .menuContext {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

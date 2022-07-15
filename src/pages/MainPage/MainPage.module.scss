@@ -6,6 +6,14 @@
   border-bottom: 2px solid $bg-dark;
   margin-bottom: 75px;
 
+  @include for-tablet {
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 30px;
+    margin-bottom: 50px;
+  }
+
   &::after {
     content: '';
     display: block;
@@ -14,5 +22,11 @@
     left: 0;
     width: 100%;
     border-bottom: 1px solid #000;
+  }
+
+  .sort {
+    @include for-tablet {
+      margin-bottom: 10px;
+    }
   }
 }

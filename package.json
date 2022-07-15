@@ -7,12 +7,14 @@
     "start:dev": "cross-env NODE_ENV=development webpack serve --open",
     "build:dev": "cross-env NODE_ENV=development webpack",
     "build:prod": "cross-env NODE_ENV=production webpack",
-    "format": "prettier --write './src/**/*.{ts,tsx,js,jsx,json,css,scss,md}'",
+    "format": "prettier --check './src/**/*.{ts,tsx,js,jsx,json,css,scss,md}'",
+    "format:fix": "prettier --write './src/**/*.{ts,tsx,js,jsx,json,css,scss,md}'",
     "eslint": "eslint . --ext './src/**/*.{js,.jsx,.ts,.tsx,.json}'",
     "eslint:fix": "npm run eslint -- --fix",
     "stylelint": "stylelint './src/**/*.{scss,css}'",
     "stylelint:fix": "npm run stylelint -- --fix",
-    "lint:fix": "npm run format && npm rum eslint:fix && npm run stylelint:fix",
+    "lint": "npm run format && npm run eslint && npm run stylelint",
+    "lint:fix": "npm run format:fix && npm rum eslint:fix && npm run stylelint:fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -28,8 +30,10 @@
   "dependencies": {
     "autoprefixer": "^10.4.7",
     "classnames": "^2.3.1",
+    "lodash": "^4.17.21",
     "normalize.scss": "^0.1.0",
     "react": "^18.2.0",
+    "react-datepicker": "^4.8.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
@@ -63,6 +67,7 @@
     "prettier": "2.7.1",
     "sass": "^1.52.1",
     "sass-loader": "^13.0.0",
+    "style-loader": "^3.3.1",
     "style-resources-loader": "^1.5.0",
     "stylelint": "^14.9.1",
     "stylelint-config-prettier": "^9.0.3",

@@ -1,0 +1,9 @@
+.textarea {
+  @extend %form-field;
+
+  min-width: 100%;
+  max-width: 100%;
+  padding: 18px;
+  height: 197px;
+  min-height: 100px;
+}

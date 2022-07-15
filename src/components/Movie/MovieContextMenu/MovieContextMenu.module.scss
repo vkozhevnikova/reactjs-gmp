@@ -1,0 +1,82 @@
+.menu {
+  position: relative;
+
+  .btnOpen,
+  .btnClose {
+    @include resetbtn;
+
+    position: absolute;
+    text-align: center;
+    color: $white;
+    transition: all 0.3s linear;
+  }
+
+  .btnOpen {
+    top: 0;
+    right: 0;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 50%;
+    background-color: $black;
+    box-shadow: 0 0 4px rgb(0 0 0 / 20%);
+
+    svg {
+      width: 19px;
+      height: 19px;
+    }
+
+    @include for-hover {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .btnClose {
+    top: 3px;
+    right: 3px;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    opacity: 0;
+    visibility: hidden;
+
+    svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    @include for-hover {
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &.isShow {
+    background-color: $black;
+    border-radius: 4px;
+    padding: 27px 0 12px;
+    transition-delay: 0.2s;
+
+    .btnOpen {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .btnClose,
+    .list {
+      opacity: 1;
+      visibility: visible;
+      transition-delay: 0.2s;
+    }
+  }
+}
