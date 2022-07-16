@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
+import cn from 'classnames';
 import { I18Y, LOCALE } from '../../core/i18y';
+import { ISearchProps } from './interfaces';
 import { Button } from '../UI/Button';
 import { Input } from '../UI/Input';
 
 import styles from './Search.module.scss';
 
-export const Search: React.FC = () => {
+export const Search: React.FC<ISearchProps> = ({ className }) => {
   const [value, setValue] = useState('');
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -15,7 +17,7 @@ export const Search: React.FC = () => {
   };
 
   return (
-    <div className={styles.search}>
+    <div className={cn(styles.search, className)}>
       <div className={styles.title}>{I18Y[LOCALE].SEARCH_TITLE}</div>
 
       <form className={styles.form}>
