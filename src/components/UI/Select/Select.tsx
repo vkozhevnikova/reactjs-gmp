@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import cn from 'classnames';
 import { ISelectProps } from './interfaces';
+import useClickOutside from '../../../hooks/useClickOutside';
 
 import { Icon } from '../Icon';
 
@@ -17,7 +18,10 @@ export const Select: React.FC<ISelectProps> = ({
   disabled,
   onChange,
 }) => {
+  const ref = useRef();
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  useClickOutside(ref, () => setIsOpen(false));
 
   const handlerOpen = (event: React.SyntheticEvent) => {
     event.preventDefault();
@@ -50,7 +54,7 @@ export const Select: React.FC<ISelectProps> = ({
   };
 
   return (
-    <div className={cn(styles.select, { [styles.disabled]: disabled })}>
+    <div ref={ref} className={cn(styles.select, { [styles.disabled]: disabled })}>
       <div className={styles.toggle} onClick={handlerOpen} role='button' aria-hidden='true'>
         <Icon icon={iconArrow} className={styles.icon} />
         <input type='hidden' value={value} id={id} name={name} disabled={disabled} />

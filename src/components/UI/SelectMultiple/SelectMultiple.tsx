@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import cn from 'classnames';
 import { ISelectMultipleProps } from './interfaces';
+import useClickOutside from '../../../hooks/useClickOutside';
 
 import { Icon } from '../Icon';
 import { Input } from '../Input';
@@ -16,9 +17,12 @@ export const SelectMultiple: React.FC<ISelectMultipleProps> = ({
   onChange,
   ...inputProps
 }) => {
+  const ref = useRef();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [choosenOptions, setChoosenOptions] = useState([]);
   const [optionsValue, setOptionsValue] = useState('');
+
+  useClickOutside(ref, () => setIsOpen(false));
 
   useEffect(() => {
     if (value) {
@@ -69,7 +73,7 @@ export const SelectMultiple: React.FC<ISelectMultipleProps> = ({
   };
 
   return (
-    <div className={cn(styles.select, className)}>
+    <div ref={ref} className={cn(styles.select, className)}>
       <div className={styles.field} onClick={handlerOpen} role='button' aria-hidden='true'>
         <Input
           value={optionsValue}
