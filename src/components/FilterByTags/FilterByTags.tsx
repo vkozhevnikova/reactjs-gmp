@@ -1,7 +1,7 @@
 import * as React from 'react';
 import cn from 'classnames';
 import { IFilterByTagsProps } from './interfaces';
-import { IGenresProps } from '../../types/IGenresProps';
+import { IGenresProps } from '../../core/types/IGenresProps';
 import { LOCALE, I18Y } from '../../core/i18y';
 
 import styles from './FilterByTags.module.scss';

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { I18Y, LOCALE } from '../../../core/i18y';
 import { fetchMovieById } from '../../../core/api/mocked/fetchMovieById';
 import { IEditMovieProps } from './interfaces';
-import { IMovieProps } from '../../../types/IMovieProps';
+import { IMovieProps } from '../../../core/types/IMovieProps';
 import { MovieForm } from '../MovieForm';
 
 import styles from './EditMovie.module.scss';
@@ -15,6 +15,7 @@ export const EditMovie: React.FC<IEditMovieProps> = ({ movieId }) => {
       .then(movie => {
         setMovieData(movie);
       })
+      // eslint-disable-next-line no-console
       .catch(console.error);
   }, [movieId]);
 

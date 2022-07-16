@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import cn from 'classnames';
 import { IMovieFormProps } from './interfaces';
-import { IMovieProps } from '../../../types/IMovieProps';
+import { IMovieProps } from '../../../core/types/IMovieProps';
 
 import { GENRES } from '../../../core/constants';
 
