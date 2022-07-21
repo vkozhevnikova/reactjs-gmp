@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import cn from 'classnames';
-import { actions, useGlobalContext } from '../../core/store';
+import { actionTypes, useGlobalContext } from '../../core/store';
 import { LOCALE, I18Y } from '../../core/i18y';
 
 import useToggleModal from '../../hooks/useToggleModal';
@@ -38,7 +38,7 @@ export const Header: React.FC = () => {
     setMovieDetails(null);
 
     dispatch({
-      type: actions.SET_MOVIE_DETAILS,
+      type: actionTypes.SET_MOVIE_DETAILS,
       payload: null,
     });
   };

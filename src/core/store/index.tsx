@@ -10,8 +10,8 @@ const initialState: IInitialState = {
   ...MOVIE.state,
 };
 
-export const actions = {
-  ...MOVIE.actions,
+export const actionTypes = {
+  ...MOVIE.actionTypes,
 };
 
 const handlers = {

@@ -1,6 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
-import { actions, useGlobalContext } from '../../../core/store';
+import { actionTypes, useGlobalContext } from '../../../core/store';
 import { I18Y, LOCALE } from '../../../core/i18y';
 import { GENRES } from '../../../core/constants';
 import { IMovieCardProps } from './interfaces';
@@ -19,7 +19,7 @@ export const MovieCard: React.FC<IMovieCardProps> = ({ movie, className, onEdit,
     event.preventDefault();
 
     dispatch({
-      type: actions.SET_MOVIE_DETAILS,
+      type: actionTypes.SET_MOVIE_DETAILS,
       payload: item,
     });
 

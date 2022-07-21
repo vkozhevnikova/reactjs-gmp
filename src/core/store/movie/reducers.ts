@@ -1,8 +1,8 @@
-import actions from './actions';
+import actionTypes from './actionTypes';
 
 const handlers = {};
 
-handlers[actions.SET_MOVIE_DETAILS] = (state, action) => ({
+handlers[actionTypes.SET_MOVIE_DETAILS] = (state, action) => ({
   ...state,
   movieDetails: action.payload,
 });
