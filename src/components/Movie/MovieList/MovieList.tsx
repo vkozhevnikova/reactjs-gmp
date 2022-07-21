@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { IMovieListProps } from './interfaces';
-import { IMovieProps } from '../../../types/IMovieProps';
+import { IMovieProps } from '../../../core/types/IMovieProps';
+
+import useToggleModal from '../../../hooks/useToggleModal';
+
 import { MovieCard } from '../MovieCard';
 import { Modal } from '../../UI/Modal';
 import { EditMovie } from '../EditMovie';
@@ -11,22 +14,18 @@ import styles from './MovieList.module.scss';
 export const MovieList: React.FC<IMovieListProps> = ({ movies }) => {
   const [movieEditing, setMovieEditing] = useState(null);
   const [movieDeleting, setMovieDeleting] = useState(null);
-  const [isOpenEditModal, setIsOpenEditModal] = useState<boolean>(false);
-  const [isOpenDeleteModal, setIsOpenDeleteModal] = useState<boolean>(false);
+  const { isOpenModal: isOpenEditModal, onToggleModal: onToggleEditModal } = useToggleModal();
+
+  const { isOpenModal: isOpenDeleteModal, onToggleModal: onToggleDeleteModal } = useToggleModal();
 
   const handlerEditMovie = (id: string) => {
-    /**
-     * TODO: Refactor this once a Modal hook is ready (Homework 5)
-     */
-    document.body.classList.add('overflow');
     setMovieEditing(id);
-    setIsOpenEditModal(true);
+    onToggleEditModal();
   };
 
   const handlerDeleteMovie = (id: string) => {
-    document.body.classList.add('overflow');
     setMovieDeleting(id);
-    setIsOpenDeleteModal(true);
+    onToggleDeleteModal();
   };
 
   const renderCard = (movie: IMovieProps) => {
@@ -46,11 +45,11 @@ export const MovieList: React.FC<IMovieListProps> = ({ movies }) => {
     <>
       <div className={styles.list}>{renderList(movies)}</div>
 
-      <Modal isOpen={isOpenEditModal} handlerModal={setIsOpenEditModal}>
+      <Modal isOpen={isOpenEditModal} onClose={onToggleEditModal}>
         <EditMovie movieId={movieEditing} />
       </Modal>
 
-      <Modal isOpen={isOpenDeleteModal} handlerModal={setIsOpenDeleteModal}>
+      <Modal isOpen={isOpenDeleteModal} onClose={onToggleDeleteModal}>
         <DeleteMovie id={movieDeleting} />
       </Modal>
     </>

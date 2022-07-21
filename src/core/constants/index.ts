@@ -1,5 +1,5 @@
 import { range } from 'lodash';
-import { getYear } from '../../utils/date';
+import { getYear } from '../utils/date';
 
 export const MONTH = [
   'January',

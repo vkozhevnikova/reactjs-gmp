@@ -9,13 +9,8 @@ import closeIcon from '../../../assets/sprites/close.svg';
 
 const modalRoot = document.getElementById('modal-root');
 
-export const Modal: React.FC<IModalProps> = ({ children, isOpen, handlerModal }) => {
+export const Modal: React.FC<IModalProps> = ({ children, isOpen, onClose }) => {
   if (!isOpen) return null;
-
-  const onClose = () => {
-    document.body.classList.remove('overflow');
-    handlerModal(false);
-  };
 
   return ReactDOM.createPortal(
     <>

@@ -5,3 +5,10 @@ export const getYear = (date: string | Date) => {
 };
 
 export const getMonth = (date: Date) => date.getMonth();
+
+export const getTime = (timeInMinutes: number) => {
+  const hours = Math.floor(timeInMinutes / 60);
+  const minutes = timeInMinutes % 60;
+
+  return `${hours}h ${minutes}min`;
+};

@@ -1,6 +1,7 @@
 .header {
   position: relative;
   height: 396px;
+  background-color: $black;
 
   .logo {
     width: 152px;
@@ -53,6 +54,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
     padding-top: 20px;
     padding-bottom: 20px;
     margin-bottom: 35px;
@@ -63,5 +65,45 @@
     height: 10px;
     vertical-align: 10%;
     margin-right: 5px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .showSearchButton {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    color: $primary;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-50%);
+
+    svg {
+      width: 98%;
+      height: 98%;
+    }
+  }
+
+  &.isShowMovie {
+    height: auto;
+    border-bottom: 10px solid $grey;
+
+    .topPanel {
+      margin-bottom: 10px;
+    }
+
+    .addMovieButton,
+    .cover {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .showSearchButton {
+      opacity: 1;
+      visibility: visible;
+    }
   }
 }

@@ -1,4 +1,4 @@
-import { IMovieProps } from '../../../types/IMovieProps';
+import { IMovieProps } from '../../../core/types/IMovieProps';
 
 export interface IMovieCardProps {
   movie: IMovieProps;

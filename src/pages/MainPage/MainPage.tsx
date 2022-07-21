@@ -33,6 +33,7 @@ const MainPage = () => {
       .then(result => {
         setMovies(result);
       })
+      // eslint-disable-next-line no-console
       .catch(console.error);
   }, []);
 
