@@ -20,7 +20,7 @@ export const Search: React.FC<ISearchProps> = ({ className }) => {
     event.preventDefault();
 
     setValue('');
-  }
+  };
 
   return (
     <div className={cn(styles.search, className)}>

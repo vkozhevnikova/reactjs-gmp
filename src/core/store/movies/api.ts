@@ -9,9 +9,9 @@ export const moviesApi = createApi({
     baseUrl: process.env.API_URL,
   }),
   tagTypes: ['Movies'],
-  endpoints: (build) => ({
+  endpoints: build => ({
     getMovies: build.query<IMovieProps[], IMovieFiltering>({
-      query: (params) => ({
+      query: params => ({
         url: '/movies',
         params: {
           ...params,
@@ -33,7 +33,4 @@ export const moviesApi = createApi({
   }),
 });
 
-export const {
-  useLazyGetMoviesQuery,
-  useGetMovieByIdQuery,
-} = moviesApi;
+export const { useLazyGetMoviesQuery, useGetMovieByIdQuery } = moviesApi;

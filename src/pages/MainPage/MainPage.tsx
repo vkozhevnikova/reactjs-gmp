@@ -15,10 +15,7 @@ const MainPage = () => {
   const [sorting, setSorting] = useState('release_date');
   const [tag, setTag] = useState('');
   const [movies, setMovies] = useState([]);
-  const [
-    getMovies,
-    { data: filteredMovies = [], isLoading }
-  ] = useLazyGetMoviesQuery();
+  const [getMovies, { data: filteredMovies = [], isLoading }] = useLazyGetMoviesQuery();
 
   useEffect(() => {
     setMovies(filteredMovies);
@@ -28,7 +25,7 @@ const MainPage = () => {
     const filter = tag !== I18Y[LOCALE].FILTER_ALL_TAG_CAPTION ? [tag] : [];
     const sort = {
       sortBy: sorting,
-      sortOrder: 'asc'
+      sortOrder: 'asc',
     };
 
     getMovies({
@@ -57,10 +54,7 @@ const MainPage = () => {
   return (
     <Layout>
       <div className={styles.filterPanel}>
-        <FilterByTags
-          options={optionsForFilter}
-          onClick={handleFilter}
-        />
+        <FilterByTags options={optionsForFilter} onClick={handleFilter} />
         <Sort
           caption={I18Y[LOCALE].SORT_BY_CAPTION}
           id='sorting-movies'
@@ -72,11 +66,13 @@ const MainPage = () => {
         />
       </div>
 
-      {
-        isLoading
-          ? <Loader className={styles.loader} />
-          : <ErrorBoundary><MovieList movies={movies} /></ErrorBoundary>
-      }
+      {isLoading ? (
+        <Loader className={styles.loader} />
+      ) : (
+        <ErrorBoundary>
+          <MovieList movies={movies} />
+        </ErrorBoundary>
+      )}
     </Layout>
   );
 };

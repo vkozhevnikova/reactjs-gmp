@@ -8,7 +8,7 @@ import { replaceNotFoundImage } from '../../../core/utils/replaceNotFoundImage';
 import styles from './MovieDetails.module.scss';
 
 export const MovieDetails: React.FC<IMovieDetailsProps> = ({ id }) => {
-  const {data = {}, isLoading} = useGetMovieByIdQuery(id);
+  const { data = {}, isLoading } = useGetMovieByIdQuery(id);
 
   const renderGenre = (item: string) => {
     return (
@@ -22,15 +22,8 @@ export const MovieDetails: React.FC<IMovieDetailsProps> = ({ id }) => {
 
   if (isLoading) return null;
 
-  const {
-    poster_path,
-    title,
-    vote_average,
-    genres,
-    release_date,
-    runtime,
-    overview,
-  } = data as IMovieProps;
+  const { poster_path, title, vote_average, genres, release_date, runtime, overview } =
+    data as IMovieProps;
 
   return (
     <section className={styles.details}>
@@ -38,7 +31,7 @@ export const MovieDetails: React.FC<IMovieDetailsProps> = ({ id }) => {
         <img
           src={poster_path}
           alt={title}
-          onError={(event) => replaceNotFoundImage(event, styles.notFound)}
+          onError={event => replaceNotFoundImage(event, styles.notFound)}
         />
       </div>
 

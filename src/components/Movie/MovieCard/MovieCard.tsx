@@ -17,7 +17,7 @@ export const MovieCard: React.FC<IMovieCardProps> = ({ movie, className, onEdit,
 
   const handlerViewDetails = (
     event: React.MouseEvent<HTMLDivElement>,
-    idMovie: string | number
+    idMovie: string | number,
   ) => {
     event.preventDefault();
 
@@ -55,7 +55,7 @@ export const MovieCard: React.FC<IMovieCardProps> = ({ movie, className, onEdit,
         <img
           src={poster_path}
           alt={title}
-          onError={(event) => replaceNotFoundImage(event, styles.notFound)}
+          onError={event => replaceNotFoundImage(event, styles.notFound)}
         />
       </div>
 

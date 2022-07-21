@@ -52,15 +52,7 @@ export const MovieForm: React.FC<IMovieFormProps> = ({ movie }) => {
 
   const handleSelectMultipleChange = () => {};
 
-  const {
-    tagline,
-    title,
-    genres,
-    release_date,
-    runtime,
-    overview,
-    vote_average,
-  } = movieData;
+  const { tagline, title, genres, release_date, runtime, overview, vote_average } = movieData;
 
   return (
     <form className={styles.form}>

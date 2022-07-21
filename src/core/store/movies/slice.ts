@@ -18,10 +18,10 @@ export const moviesSlice = createSlice({
   initialState,
   reducers: {
     setMovieDetails: (state, action: PayloadAction<string | number>) => {
-      state.openedMovieId = action.payload
+      state.openedMovieId = action.payload;
     },
     setFilteringParams: (state, action: PayloadAction<IMovieFiltering>) => {
-      state.filteringParams = action.payload
+      state.filteringParams = action.payload;
     },
   },
 });
