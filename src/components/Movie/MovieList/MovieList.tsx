@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IMovieListProps } from './interfaces';
+import { useGetMoviesQuery } from '../../../core/store/movies/api';
 import { IMovieProps } from '../../../core/types/IMovieProps';
 
 import useToggleModal from '../../../hooks/useToggleModal';
@@ -11,11 +11,12 @@ import { DeleteMovie } from '../DeleteMovie';
 
 import styles from './MovieList.module.scss';
 
-export const MovieList: React.FC<IMovieListProps> = ({ movies }) => {
+export const MovieList: React.FC = () => {
+  const {data: movies = [], isLoading} = useGetMoviesQuery({});
+
   const [movieEditing, setMovieEditing] = useState(null);
   const [movieDeleting, setMovieDeleting] = useState(null);
   const { isOpenModal: isOpenEditModal, onToggleModal: onToggleEditModal } = useToggleModal();
-
   const { isOpenModal: isOpenDeleteModal, onToggleModal: onToggleDeleteModal } = useToggleModal();
 
   const handlerEditMovie = (id: string) => {
@@ -40,6 +41,8 @@ export const MovieList: React.FC<IMovieListProps> = ({ movies }) => {
     );
   };
   const renderList = (items: IMovieProps[]) => items.map(renderCard);
+
+  if (isLoading) return null;
 
   return (
     <>
