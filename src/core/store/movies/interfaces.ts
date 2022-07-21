@@ -1,3 +1,4 @@
+import { IMovieFiltering } from '../../types/IMovieFiltering';
 import { IMovieProps } from '../../types/IMovieProps';
 
 export interface IMoviesResponse {
@@ -8,5 +9,6 @@ export interface IMoviesResponse {
 }
 
 export interface IMoviesState {
-  movieDetails: string | number;
+  openedMovieId: string | number;
+  filteringParams: IMovieFiltering;
 }

@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { IMovieProps } from '../../types/IMovieProps';
 import { IMoviesResponse } from './interfaces';
+import { IMovieFiltering } from '../../types/IMovieFiltering';
 
 export const moviesApi = createApi({
   reducerPath: 'moviesApi',
@@ -9,7 +10,7 @@ export const moviesApi = createApi({
   }),
   tagTypes: ['Movies'],
   endpoints: (build) => ({
-    getMovies: build.query<IMovieProps[], {[key: string]: string}>({
+    getMovies: build.query<IMovieProps[], IMovieFiltering>({
       query: (params) => ({
         url: '/movies',
         params: {
@@ -33,6 +34,6 @@ export const moviesApi = createApi({
 });
 
 export const {
-  useGetMoviesQuery,
+  useLazyGetMoviesQuery,
   useGetMovieByIdQuery,
 } = moviesApi;

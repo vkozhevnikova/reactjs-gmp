@@ -1,8 +1,16 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { IMoviesState } from './interfaces';
+import { IMovieFiltering } from '../../types/IMovieFiltering';
 
 const initialState: IMoviesState = {
-  movieDetails: null,
+  openedMovieId: null,
+  filteringParams: {
+    sortBy: '',
+    sortOrder: '',
+    search: '',
+    searchBy: '',
+    filter: [],
+  },
 };
 
 export const moviesSlice = createSlice({
@@ -10,8 +18,11 @@ export const moviesSlice = createSlice({
   initialState,
   reducers: {
     setMovieDetails: (state, action: PayloadAction<string | number>) => {
-      state.movieDetails = action.payload
-    }
+      state.openedMovieId = action.payload
+    },
+    setFilteringParams: (state, action: PayloadAction<IMovieFiltering>) => {
+      state.filteringParams = action.payload
+    },
   },
 });
 

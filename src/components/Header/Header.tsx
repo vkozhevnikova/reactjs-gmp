@@ -21,18 +21,18 @@ import plusIcon from '../../assets/sprites/plus.svg';
 import searchIcon from '../../assets/sprites/search.svg';
 
 export const Header: React.FC = () => {
-  const { movieDetails } = useAppSelector(state => state.movies);
+  const { openedMovieId } = useAppSelector(state => state.movies);
   const { isOpenModal, onToggleModal } = useToggleModal();
   const [idMovieDetails, setIdMovieDetails] = useState(null);
   const [isShowSearch, setIsShowSearch] = useState<boolean>(true);
   const { setMovieDetails } = useActions();
 
   useEffect(() => {
-    if (movieDetails) {
-      setIdMovieDetails(movieDetails);
+    if (openedMovieId) {
+      setIdMovieDetails(openedMovieId);
       setIsShowSearch(false);
     }
-  }, [movieDetails]);
+  }, [openedMovieId]);
 
   const handlerShowSearch = () => {
     setIsShowSearch(true);

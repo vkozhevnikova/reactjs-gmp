@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useGetMoviesQuery } from '../../../core/store/movies/api';
 import { IMovieProps } from '../../../core/types/IMovieProps';
+import { IMovieListProps } from './interfaces';
 
 import useToggleModal from '../../../hooks/useToggleModal';
 
@@ -11,9 +11,7 @@ import { DeleteMovie } from '../DeleteMovie';
 
 import styles from './MovieList.module.scss';
 
-export const MovieList: React.FC = () => {
-  const {data: movies = [], isLoading} = useGetMoviesQuery({});
-
+export const MovieList: React.FC<IMovieListProps> = ({ movies }) => {
   const [movieEditing, setMovieEditing] = useState(null);
   const [movieDeleting, setMovieDeleting] = useState(null);
   const { isOpenModal: isOpenEditModal, onToggleModal: onToggleEditModal } = useToggleModal();
@@ -41,8 +39,6 @@ export const MovieList: React.FC = () => {
     );
   };
   const renderList = (items: IMovieProps[]) => items.map(renderCard);
-
-  if (isLoading) return null;
 
   return (
     <>
